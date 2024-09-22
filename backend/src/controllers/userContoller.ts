@@ -3,7 +3,7 @@ import User,{IUser} from "../models/userModel"; // Import your User model
 import bcrypt from "bcrypt"; // For password hashing
 
 export const registerUser = async (req: Request, res: Response) => {
-  const { username, password } = req.body;
+  const { username, password,role} = req.body;
   // Save user to database logic...
   try{
     //Check if the User already exists
@@ -16,7 +16,7 @@ export const registerUser = async (req: Request, res: Response) => {
     const hashedPassword =await bcrypt.hash(password,10);
 
     // Save user to databse
-    const newUser = new User({username,password:hashedPassword});
+    const newUser = new User({username,password:hashedPassword,role});
     await newUser.save();
 
     res.status(201).json({ message: "User registered successfully" });
