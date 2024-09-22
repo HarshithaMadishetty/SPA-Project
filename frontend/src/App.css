@@ -90,8 +90,19 @@ form button {
   color: white;
   border: none;
   cursor: pointer;
+  
 }
 
 form button:hover {
   background-color: #4cae4c;
+}
+
+.role {
+  font-weight: bold;
+  color: black; 
+  padding: 5px 10px;
+  margin-bottom: 8px;
+  border: 1px solid rgb(51, 48, 48);
+  border-radius: 5px;
+  display: inline-block;
 }
